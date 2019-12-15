@@ -2,4 +2,4 @@
 $config["server"]='localhost';
 $config["username"]='root';
 $config["password"]='';
-$config["database_name"]='evoting';
+$config["database_name"]='db_voting';

@@ -6,7 +6,7 @@
         <?php if($_POST) include 'aksi.php'; ?>
         <form class="form-signin" action="?m=login_pemilih" method="post">                        
             <div class="form-group">
-                <label>Username</label>
+                <label>Username </label>
                 <input type="text" class="form-control" placeholder="Username" name="user" autofocus />
             </div>
             <div class="form-group">            
