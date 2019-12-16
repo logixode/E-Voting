@@ -34,26 +34,19 @@
     </style>               
   </head>  
 <body>
-    <div class="container">  
-        <header> 
-                  <img src="gambar/header.jpeg">
-            <!-- <div class="row" >
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                </div>
-                <div class="col-md-3"></div>
-            </div> -->
-        </header>
-        <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="?"><i>E-Voting TPHT</i></a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand flex" href="?">
+                    <img src="gambar/logo-hmti.png" width="50">
+                    E-Voting System Teknik Informatika
+                </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -83,8 +76,8 @@
               </ul>
             </div><!--/.nav-collapse -->
         </div>
-        </nav>          
-        <div class="">
+    </nav>          
+    <div class="container-fluid">
             <?php
                 if(file_exists($mod.'.php')){
                     if($mod=='tanda_terima' && $_SESSION['level']!='pemilih'){
@@ -93,14 +86,15 @@
                         include $mod.'.php';
                     }                               
                 }else
-                    include 'pilkada.php';
+                    redirect_js('?m=login');
+
+                    // include 'pilkada.php';
             ?>
-        </div>                          
-    </div>
-    <footer class="footer">
-      <div class="container">
-        <!-- <p>Copyright &copy; <?=date('Y')?> SarjanaKomedi.com <em class="pull-right">Diupdate tanggal 13 Oktober 2017</em></p> -->
-      </div>
-    </footer>
-    </body>
+    </div>                   
+        <!-- <footer class="footer">
+            <div class="container">
+            <p>Copyright &copy; <?=date('Y')?> SarjanaKomedi.com <em class="pull-right">Diupdate tanggal 13 Oktober 2017</em></p>
+            </div>
+        </footer> -->
+</body>
 </html>

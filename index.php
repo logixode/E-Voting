@@ -38,10 +38,10 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand flex" href="?">
                     <img src="gambar/logo-hmti.png" width="50">
@@ -83,12 +83,13 @@
                 } else {
                     include $mod.'.php';
                 }                               
-            }else
+            }else {
                 if($_SESSION['level']!='pemilih'){
                     // redirect_js('?m=login_pemilih');
                     include 'login_pemilih.php';
                 } else 
-                include 'pilkada.php';
+                    include 'pilkada.php';
+            }
         ?>
     </div>                   
     <!-- <footer class="footer">
