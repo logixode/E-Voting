@@ -31,7 +31,10 @@
       header{
         text-align: center;
       }
-    </style>               
+    </style>       
+    
+    <script src="assets/dist/sweetalert2.min.js"></script>  
+    <link rel="stylesheet" href="assets/dist/sweetalert2.min.css">
   </head>  
 <body class="<?= ($_SESSION['level']!='pemilih') ? 'gray' : '' ?>">
 
@@ -44,6 +47,7 @@
     
       <?php 
         if($_SESSION['level']=='pemilih'):
+            $row = $db->get_row("SELECT * FROM tb_pemilih WHERE id_pemilih = '$_SESSION[id_pemilih]'");
       ?>
     <div class="logo">
         <img src="gambar/logo-hmti.png" width="150">
@@ -62,7 +66,8 @@
                     E-Voting System Teknik Informatika
                 </a> -->
                 <a class="navbar-brand flex" href="?m=tanda_terima">
-                    [Nama User] 
+                    <!-- [Nama User] -->
+                    <?= $row->nama_pemilih; ?>
                 </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
@@ -96,7 +101,24 @@
                 <ul class="nav navbar-nav navbar-right">
                     <?php if($_SESSION['login']):?>
                         <!-- <li><a href="?m=password"><span class="glyphicon glyphicon-lock"></span> Password</a></li> -->
-                        <li><a href="aksi.php?act=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                        <li>
+                            <a href="#"
+                                onclick="
+                                Swal.fire({
+                                    text: 'Yakin ingin keluar?',
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: 'Confirm'
+                                }).then((result) => {
+                                    if (result.value) {
+                                        window.location.href='aksi.php?act=logout'
+                                    }
+                                })
+                                "
+                            ><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                        </li>
                     <?php endif ?> 
                     <?php 
                         if ($mod!='login_pemilih' && $_SESSION['level']!='pemilih'): 

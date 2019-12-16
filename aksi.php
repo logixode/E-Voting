@@ -14,7 +14,7 @@ require_once'functions.php';
             $_SESSION[level] = 'pemilih';
             redirect_js("index.php?m=tanda_terima&act=pilih");
         } else{
-            print_msg("Salah kombinasi no NIM dan password.");
+            print_msg("Salah kombinasi Username dan Password.");
         }          
     }elseif ($mod=='login'){
         $user = esc_field($_POST[user]);

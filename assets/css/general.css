@@ -68,6 +68,10 @@ body {
 
 .center {
   margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* background: #f5f5f5; */
   /* height: 100%; */
 }
@@ -104,12 +108,12 @@ body {
   padding: 20px;
 }
 
-.btn-submit {
-  background: ;
-}
-
 .w-100 {
   width: 100%;
+}
+
+.nav-admin {
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary {
@@ -148,12 +152,16 @@ body {
   background: #eee;
 }
 
+.p-5 {
+  padding: 20px;
+}
+
 .split {
   padding: 50px;
 }
 
 .gray {
-  background: rgb(241, 243, 243);
+  background: #f3f6fa9a !important;
 }
 
 .form {
@@ -185,4 +193,40 @@ body {
 
 .form-margin {
   margin-bottom: 20px;
+}
+
+.tim-kandidat {
+  /* display: block; */
+  margin-bottom: -50px;
+}
+
+.nama-kandidat {
+  margin: -30px 0;
+  opacity: 0;
+  /* display: none; */
+}
+
+.kandidat:hover {
+  transform: scale(1.05);
+  transition: ease 0.4s;
+}
+
+.kandidat:hover .tim-kandidat {
+  /* transform: scale(2); */
+  /* animation: 1s ; */
+  /* display: none; */
+  transition: 0.1s;
+  opacity: 0;
+  /* margin: -30px 0; */
+  /* margin-left: 50px; */
+  /* margin-right: 50px;  */
+  /* height: 200px; */
+}
+
+.kandidat:hover .nama-kandidat {
+  transition: ease 0.3s;
+  margin: 30px 0 20px 0;
+  opacity: 1;
+  /* display: block; */
+  /* animation: 1s ease; */
 }

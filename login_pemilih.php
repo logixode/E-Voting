@@ -11,8 +11,8 @@
             <?php if($_POST) include 'aksi.php'; ?>
             <form class="form-signin" action="?m=login_pemilih" method="post">                        
                 <div class="form-group">
-                    <h5>Nomor Induk Mahasiswa </h5>
-                    <input type="text" class="form-control" placeholder="Masukkan NIM" name="user" autofocus required />
+                    <h5>Username</h5>
+                    <input type="text" class="form-control" placeholder="Masukkan Username" name="user" autofocus required />
                 </div>
                 <div class="form-group">            
                     <h5>Password</h5>

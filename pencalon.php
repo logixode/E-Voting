@@ -1,7 +1,7 @@
 <div class="page-header">
     <h1>Pencalon</h1>
 </div>
-<div class="panel panel-default">
+<div class="panel panel-default card">
     <div class="panel-heading">
         <form class="form-inline">
             <input type="hidden" name="m" value="pencalon" />
