@@ -1,5 +1,5 @@
 <div class="center">
-    <div class="card">
+    <div class="card absolute">
 
         <div class="page-header text-center">
             <h2>Login Admin</h2>           
@@ -16,7 +16,7 @@
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="pass" />  
             </div>      
             <div class="form-group">                
-                <button class="btn btn-primary login" type="submit"><span class="glyphicon glyphicon-log-in"></span> Masuk</button>
+                <button class="btn btn-primary w-100" type="submit"><span class="glyphicon glyphicon-log-in"></span> Masuk</button>
             </div>        
         </form>      
     </div>

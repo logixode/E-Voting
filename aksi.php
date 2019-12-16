@@ -12,9 +12,9 @@ require_once'functions.php';
             $_SESSION[login] = TRUE;
             $_SESSION[id_pemilih] = $row->id_pemilih;
             $_SESSION[level] = 'pemilih';
-            redirect_js("index.php?m=tanda_terima");
+            redirect_js("index.php?m=tanda_terima&act=pilih");
         } else{
-            print_msg("Salah kombinasi no KTP dan password.");
+            print_msg("Salah kombinasi no NIM dan password.");
         }          
     }elseif ($mod=='login'){
         $user = esc_field($_POST[user]);
@@ -131,7 +131,8 @@ require_once'functions.php';
             $db->query("INSERT INTO tb_pemilih (ktp, nama_pemilih, alamat, pass) VALUES ('$ktp', '$nama_pemilih', '$alamat', '$pass')");
             redirect_js("admin.php?m=pemilih");
         }    
-    } else if($mod=='pemilih_ubah'){
+    } 
+    else if($mod=='pemilih_ubah'){
         $ktp = $_POST['ktp'];
         $nama_pemilih = $_POST['nama_pemilih'];
         $alamat = $_POST['alamat'];
@@ -148,7 +149,8 @@ require_once'functions.php';
             $db->query("UPDATE tb_pemilih SET ktp='$ktp', nama_pemilih='$nama_pemilih', alamat='$alamat', pass='$pass' WHERE id_pemilih='$_GET[ID]'");
             redirect_js("admin.php?m=pemilih");
         }    
-    } else if ($act=='pemilih_hapus'){
+    } 
+    else if ($act=='pemilih_hapus'){
         $db->query("DELETE FROM tb_pemilih WHERE id_pemilih='$_GET[ID]'");
         $db->query("DELETE FROM tb_pilih WHERE id_pemilih='$_GET[ID]'");
         header("location:admin.php?m=pemilih");
@@ -175,5 +177,5 @@ require_once'functions.php';
         $tanda_terima = implode('', $arr);
         $tanda_terima = substr($ID . $tanda_terima, 0, 10);
         $db->query("UPDATE tb_pilih SET tanda_terima='$tanda_terima' WHERE ID='$ID'");                                
-        header("location:index.php?m=tanda_terima&act=pilih");
+        // header("location:index.php?m=tanda_terima&act=pilih");
     }     

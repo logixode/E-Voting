@@ -34,6 +34,20 @@
     </style>               
   </head>  
 <body>
+
+    <?php 
+    // if($_SESSION['level']!='pemilih'):
+    ?>
+        <!-- <div class="margin-top devide"></div> -->
+    <?php //endif ?>
+
+    <div class="logo">
+        <img src="gambar/logo-hmti.png" width="150">
+        <h3>System E-Voting Kahima/Wakahima HMTI 2020</h3>
+    </div>
+      <?php 
+        if($_SESSION['level']=='pemilih'):
+      ?>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -43,17 +57,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand flex" href="?m=tanda_terima">
-                    <img src="gambar/logo-hmti.png" width="50">
+                <!-- <a class="navbar-brand flex" href="?m=tanda_terima">
                     E-Voting System Teknik Informatika
+                </a> -->
+                <a class="navbar-brand flex" href="?m=tanda_terima">
+                    [Nama User]
                 </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav nav-center">
                     <?php if($_SESSION['level']!=='admin'): ?>
-                        <li><a href="?m=pilkada"><span class="glyphicon glyphicon-calendar"></span> About </a></li>
-                        <!-- <li><a href="?m=tanda_terima"><span class="glyphicon glyphicon-glyphicon glyphicon-cloud"></span> Login</a></li> -->
                         <li><a href="?m=daftar_peserta"><span class="glyphicon glyphicon-glyphicon glyphicon-user"></span> Calon Ketua Himpunan</a></li>
+                        <!-- <li><a href="?m=tanda_terima"><span class="glyphicon glyphicon-glyphicon glyphicon-cloud"></span> Login</a></li> -->
+                        <li><a href="?m=pilkada"><span class="glyphicon glyphicon-calendar"></span> About </a></li>
                         <!-- <li><a href="?m=hasil_voting"><span class="glyphicon glyphicon-glyphicon glyphicon-signal"></span> Hasil Voting</a></li> -->
                     <?php endif?>
                 
@@ -68,7 +84,7 @@
                 </ul>          
                 <ul class="nav navbar-nav navbar-right">
                     <?php if($_SESSION['login']):?>
-                        <li><a href="?m=password"><span class="glyphicon glyphicon-lock"></span> Password</a></li>
+                        <!-- <li><a href="?m=password"><span class="glyphicon glyphicon-lock"></span> Password</a></li> -->
                         <li><a href="aksi.php?act=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                     <?php endif ?> 
                     <?php 
@@ -80,7 +96,8 @@
                 </ul>
             </div><!--/.nav-collapse -->
         </div>
-    </nav>          
+    </nav>     
+    <?php endif ?>     
     <div class="container-fluid">
         <?php
             if(file_exists($mod.'.php')){
