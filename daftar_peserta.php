@@ -15,11 +15,11 @@ $rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon");
 	}
 </style>
 <div class="page-header">
-    <h1 class="text-center">Daftar Calon Kahima TPHT 2019</h1>
+    <h2 class="text-center">Calon Ketua Himpunan Teknik Informatika 2020</h2>
 </div>
 <div class="row">
     <?php foreach($rows as $row):?>
-    <div class="col-md-6">        
+    <div class="col-md-4">        
         <div class="thumbnail">
             <img src="gambar/<?=$row->gambar?>" />
         </div>
@@ -29,7 +29,7 @@ $rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon");
 
     <!-- visi misi -->
     <div class="col-md-6">
-		<div class="card col-md-6" style="text-align: center;">
+		<div class="card col-md-4" style="text-align: center;">
 		  <div class="card-body">
 		    <h3 class="card-title">Visi</h3>
 		    <ol>
@@ -45,7 +45,7 @@ $rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon");
 		    </ol>
 		  </div>
 		</div>
-		<div class="card col-md-6" style="text-align: center;">
+		<div class="card col-md-4" style="text-align: center;">
 		  <div class="card-body">
 		    <h3 class="card-title">Misi</h3>
 		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -58,7 +58,7 @@ $rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon");
 		</div>
     </div>
     <div class="col-md-6">
-		<div class="card col-md-6" style="text-align: center;">
+		<div class="card col-md-4" style="text-align: center;">
 		  <div class="card-body">
 		    <h3 class="card-title">Visi</h3>
 		    <ol>
@@ -74,7 +74,7 @@ $rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon");
 		    </ol>
 		  </div>
 		</div>
-		<div class="card col-md-6" style="text-align: center;">
+		<div class="card col-md-4" style="text-align: center;">
 		  <div class="card-body">
 		    <h3 class="card-title">Misi</h3>
 		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
