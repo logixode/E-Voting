@@ -1,5 +1,5 @@
 <?php
-$rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon"); 
+    $rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon"); 
 ?>
 <style type="text/css">
     /* .thumbnail img{
@@ -14,7 +14,7 @@ $rows = $db->get_results("SELECT * FROM tb_pencalon ORDER BY kode_pencalon");
     <div class="row container-fluid">
         <?php foreach($rows as $row):?>
         <div class="col-md-4">    
-            <div class="card">
+            <div class="card pad-card">
 
                 <div class="thumbnail">
                     <img src="gambar/<?=$row->gambar?>" />

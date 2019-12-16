@@ -2,7 +2,7 @@
 $row = $db->get_row("SELECT * FROM tb_pemilih WHERE id_pemilih='$_SESSION[id_pemilih]'");
 ?>
 <div class="center">
-    <div class="card absolute">
+    <div class="card card-size pad-card">
         <div class="page-header">
             <h3>Data Identitas Pemilih Pilkada</h3>
         </div>

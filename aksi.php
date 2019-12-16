@@ -178,4 +178,18 @@ require_once'functions.php';
         $tanda_terima = substr($ID . $tanda_terima, 0, 10);
         $db->query("UPDATE tb_pilih SET tanda_terima='$tanda_terima' WHERE ID='$ID'");                                
         // header("location:index.php?m=tanda_terima&act=pilih");
-    }     
+    }   
+    
+    /** GENERATE */
+    else if($mod=='generate'){
+        $user = esc_field($_POST[user]);
+        $pass = esc_field($_POST[pass]);
+        
+        $row = $db->get_row("SELECT * FROM tb_pemilih WHERE ktp='$user'");
+        if($row = $user){
+        $db->query("UPDATE tb_pemilih set id_pemilih='',ktp='$user',nama_pemilih='',alamat='',pass='$pass' WHERE ktp='$user'");
+            // mysqli_query($koneksi,$query);
+        } else{
+            print_msg("Password yang anda masukkan salah");
+        }
+    }

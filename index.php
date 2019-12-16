@@ -33,7 +33,7 @@
       }
     </style>               
   </head>  
-<body>
+<body class="<?= ($_SESSION['level']!='pemilih') ? 'gray' : '' ?>">
 
     <?php 
     // if($_SESSION['level']!='pemilih'):
@@ -41,13 +41,14 @@
         <!-- <div class="margin-top devide"></div> -->
     <?php //endif ?>
 
-    <div class="logo">
-        <img src="gambar/logo-hmti.png" width="150">
-        <h3>System E-Voting Kahima/Wakahima HMTI 2020</h3>
-    </div>
+    
       <?php 
         if($_SESSION['level']=='pemilih'):
       ?>
+    <div class="logo">
+        <img src="gambar/logo-hmti.png" width="150">
+        <!-- <h3>System E-Voting Kahima/Wakahima HMTI 2020</h3> -->
+    </div>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -61,15 +62,25 @@
                     E-Voting System Teknik Informatika
                 </a> -->
                 <a class="navbar-brand flex" href="?m=tanda_terima">
-                    [Nama User]
+                    [Nama User] 
                 </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav nav-center">
                     <?php if($_SESSION['level']!=='admin'): ?>
+
+                        <li>
+                            <h3>System E-Voting Kahima/Wakahima HMTI 2020</h3>
+                        </li>
+<!--                         
                         <li><a href="?m=daftar_peserta"><span class="glyphicon glyphicon-glyphicon glyphicon-user"></span> Calon Ketua Himpunan</a></li>
+                        -->
+
                         <!-- <li><a href="?m=tanda_terima"><span class="glyphicon glyphicon-glyphicon glyphicon-cloud"></span> Login</a></li> -->
+<!-- 
                         <li><a href="?m=pilkada"><span class="glyphicon glyphicon-calendar"></span> About </a></li>
+                         -->
+
                         <!-- <li><a href="?m=hasil_voting"><span class="glyphicon glyphicon-glyphicon glyphicon-signal"></span> Hasil Voting</a></li> -->
                     <?php endif?>
                 

@@ -69,11 +69,12 @@
               </ul>          
               <ul class="nav navbar-nav navbar-right">
 
-                <li><a href="/">Goto User Page</a></li>
                 <?php if($_SESSION['login']):?>
-                    <li><a href="?m=password"><span class="glyphicon glyphicon-lock"></span> Password</a></li>
+                    <li><a href="?m=generate"><span class="glyphicon glyphicon-lock"></span> Generate Password</a></li>
                     <!-- <li><a href="aksi.php?act=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li> -->
                     <li><a href="aksi.php?act=logout-admin"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <?php else: ?>
+                        <li><a href="/">Goto User Page</a></li>
                 <?php endif ?> 
               </ul>
             </div><!--/.nav-collapse -->
